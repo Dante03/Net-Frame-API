@@ -1,0 +1,54 @@
+﻿@model IEnumerable<FrontEndWebApp.Models.Mostrador>
+
+@{
+    ViewBag.Title = "Mostrador";
+}
+
+<h2>Listado</h2>
+
+<p>
+    @Html.ActionLink("Agregar al mostrador", "Create")
+</p>
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Id_LibAut)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Libro.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Libro.Editorial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Autor.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Autor.Nacionalidad)
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @Html.HiddenFor(modelItem => item.Id_LibAut)
+        <td>
+            @Html.DisplayFor(modelItem => item.Libro.Titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Libro.Editorial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Autor.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Autor.Nacionalidad)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.Id_LibAut }) |
+            @Html.ActionLink("Detalles", "Details", new { id = item.Id_LibAut }) |
+            @Html.ActionLink("Borrar", "Delete", new { id = item.Id_LibAut })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<FrontEndWebApp.Models.Prestamo>
+
+@{
+    ViewBag.Title = "Prestamos";
+}
+
+<h2>Libros prestados</h2>
+
+<p>
+    @Html.ActionLink("Agregar Prestamo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Libro.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Libro.Editorial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Libro.Area)
+        </th>
+        <th>
+            @Html.DisplayName("Fecha Prestado")
+        </th>
+        <th>
+            @Html.DisplayName("Fecha Devuelto")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Devuelto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estudiante.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estudiante.Direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estudiante.CI)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Libro.Titulo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Libro.Editorial)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Libro.Area)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Fecha_Prestamo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Fecha_Devuelto)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Devuelto)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Estudiante.Nombre) @Html.DisplayFor(modelItem => item.Estudiante.Apellido)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Estudiante.Direccion)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Estudiante.CI)
+    </td>
+    <td>
+        @Html.ActionLink("Editar", "Edit", new { id=item.Id_Prestamo }) |
+        @Html.ActionLink("Detalles", "Details", new { id=item.Id_Prestamo }) |
+        @Html.ActionLink("Borrar", "Delete", new { id=item.Id_Prestamo })
+    </td>
+</tr>
+}
+
+</table>

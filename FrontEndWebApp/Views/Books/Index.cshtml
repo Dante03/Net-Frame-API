@@ -1,0 +1,51 @@
+﻿@model IEnumerable<FrontEndWebApp.Models.Libro>
+
+@{
+    ViewBag.Title = "Libros";
+}
+
+<h2>Listado</h2>
+
+<p>
+    @Html.ActionLink("Agregar Libro", "Create")
+</p>
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.Hidden(model => model.Id_Libro)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Editorial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Area)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>  
+            @Html.HiddenFor(modelItem => item.Id_Libro)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.Titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Editorial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Area)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.Id_Libro }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.Id_Libro}) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.Id_Libro })
+        </td>
+    </tr>
+}
+
+</table>

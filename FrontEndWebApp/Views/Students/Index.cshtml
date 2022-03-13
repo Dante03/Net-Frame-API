@@ -1,0 +1,69 @@
+﻿@model IEnumerable<FrontEndWebApp.Models.Estudiante>
+
+@{
+    ViewBag.Title = "Estudiantes";
+}
+
+<h2>Listado</h2>
+
+<p>
+    @Html.ActionLink("Agregar Estudiante", "Create")
+</p>
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Id_Lector)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.CI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Carrera)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Edad)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>*@
+            @Html.HiddenFor(modelItem => item.Id_Lector)
+        @*</td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.CI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Carrera)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Edad)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.Id_Lector }) |
+            @Html.ActionLink("Detalles", "Details", new { id = item.Id_Lector }) |
+            @Html.ActionLink("Borrar", "Delete", new { id = item.Id_Lector })
+        </td>
+    </tr>
+}
+
+</table>

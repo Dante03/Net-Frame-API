@@ -1,0 +1,51 @@
+﻿@model FrontEndWebApp.Models.Mostrador
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Mostrador</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @Html.HiddenFor(model => model.Id_LibAut)
+        <dt>
+            @Html.DisplayNameFor(model => model.Libro.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Libro.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Libro.Editorial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Libro.Editorial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Autor.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Autor.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Autor.Nacionalidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Autor.Nacionalidad)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id_LibAut }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>

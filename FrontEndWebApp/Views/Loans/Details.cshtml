@@ -1,0 +1,67 @@
+﻿@model FrontEndWebApp.Models.Prestamo
+
+@{
+    ViewBag.Title = "Detalles del Prestamo";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Prestamo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+            @Html.HiddenFor(model => model.Id_Prestamo)
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estudiante.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estudiante.Nombre) @Html.DisplayFor(model => model.Estudiante.Apellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Libro.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Libro.Titulo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Libro.Editorial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Libro.Editorial)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Fecha de Prestamo")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_Prestamo)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Fecha de devolucion")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_Devuelto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Devuelto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Devuelto)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id_Prestamo }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>
