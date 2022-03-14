@@ -77,6 +77,7 @@ namespace Net_Frame_API.Controllers
                 return BadRequest(ModelState);
             }
 
+            db.Database.ExecuteSqlCommand("DBCC CHECKIDENT ('Libro');");
             db.Libro.Add(libro);
 
             try

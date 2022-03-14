@@ -83,6 +83,7 @@ namespace Net_Frame_API.Controllers
                 return BadRequest(ModelState);
             }
 
+            db.Database.ExecuteSqlCommand("DBCC CHECKIDENT ('Prestamo');");
             db.Prestamo.Add(prestamo);
             await db.SaveChangesAsync();
 
