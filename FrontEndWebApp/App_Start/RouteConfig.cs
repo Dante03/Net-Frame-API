@@ -12,7 +12,7 @@ namespace FrontEndWebApp
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Loans", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Counters", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

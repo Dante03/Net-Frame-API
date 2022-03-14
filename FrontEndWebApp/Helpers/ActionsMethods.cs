@@ -5,8 +5,8 @@ namespace FrontEndWebApp.Helpers
 {
     public class ActionsMethods : IActionsMethods
     {
-        public const string urlAPI = "http://localhost:44323/api/";
-        //public const string urlAPI = "http://localhost:80/api/";
+        //public const string urlAPI = "http://localhost:44323/api/";
+        public const string urlAPI = "http://localhost:80/api/";
         public HttpWebRequest Action(string Method, string Controller)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(urlAPI + Controller);

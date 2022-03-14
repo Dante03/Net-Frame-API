@@ -17,7 +17,7 @@ namespace Net_Frame_API.Controllers
         // GET: api/Books
         public IQueryable<Libro> GetLibro()
         {
-            return db.Libro;
+            return db.Libro.OrderBy(e => e.Titulo);
         }
 
         // GET: api/Books/5

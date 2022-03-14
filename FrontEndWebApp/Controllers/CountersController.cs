@@ -24,7 +24,7 @@ namespace FrontEndWebApp.Controllers
             return View(req);
         }
 
-        // GET: Book/Details/5
+        // GET: Counters/Details/5
         public ActionResult Details(int id)
         {
             HttpWebRequest request = _actions.Action("GET", "Counters", id);
@@ -32,7 +32,7 @@ namespace FrontEndWebApp.Controllers
             return View(req);
         }
 
-        // GET: Book/Create
+        // GET: Counters/Create
         public ActionResult Create()
         {
             IActionController<Libro> Drop = new ActionController<Libro>();
@@ -64,7 +64,7 @@ namespace FrontEndWebApp.Controllers
             return View();
         }
 
-        // POST: Book/Create
+        // POST: Counters/Create
         [HttpPost]
         public ActionResult Create(Mostrador counter)
         {
@@ -80,7 +80,7 @@ namespace FrontEndWebApp.Controllers
             }
         }
 
-        // GET: Book/Edit/5
+        // GET: Counters/Edit/5
         public ActionResult Edit(int id)
         {
             HttpWebRequest request = _actions.Action("GET", "Counters", id);
@@ -116,7 +116,7 @@ namespace FrontEndWebApp.Controllers
             return View(req);
         }
 
-        // POST: Book/Edit/5
+        // POST: Counters/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, Mostrador counter)
         {
@@ -132,7 +132,7 @@ namespace FrontEndWebApp.Controllers
             }
         }
 
-        // GET: Book/Delete/5
+        // GET: Counters/Delete/5
         public ActionResult Delete(int id)
         {
             HttpWebRequest request = _actions.Action("GET", "Counters", id);
@@ -140,7 +140,7 @@ namespace FrontEndWebApp.Controllers
             return View(req);
         }
 
-        // POST: Book/Delete/5
+        // POST: Counters/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, Mostrador counter)
         {

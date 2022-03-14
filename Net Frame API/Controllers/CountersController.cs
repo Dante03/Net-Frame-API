@@ -19,7 +19,8 @@ namespace Net_Frame_API.Controllers
         {
             var counter = db.Counter.AsNoTracking()
                 .Include(e => e.Libro)
-                .Include(e => e.Autor);
+                .Include(e => e.Autor)
+                .OrderBy(e => e.Libro.Titulo);
 
             //var counter = db.Counter;
             return counter;

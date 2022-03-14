@@ -19,7 +19,8 @@ namespace Net_Frame_API.Controllers
         {
             var loan = db.Prestamo.AsNoTracking()
                 .Include(e => e.Estudiante)
-                .Include(e => e.Libro);
+                .Include(e => e.Libro)
+                .OrderBy(e => e.Libro.Titulo);
             return loan;
         }
 

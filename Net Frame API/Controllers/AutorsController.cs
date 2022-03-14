@@ -17,7 +17,7 @@ namespace Net_Frame_API.Controllers
         // GET: api/Autors
         public IQueryable<Autor> GetAutor()
         {
-            return db.Autor;
+            return db.Autor.OrderBy(e => e.Nombre);
         }
 
         // GET: api/Autors/5

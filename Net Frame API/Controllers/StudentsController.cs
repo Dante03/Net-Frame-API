@@ -17,7 +17,7 @@ namespace Net_Frame_API.Controllers
         // GET: api/Estudents
         public IQueryable<Estudiante> GetEstudiante()
         {
-            return db.Estudiante;
+            return db.Estudiante.OrderBy(e => e.Nombre);
         }
 
         // GET: api/Estudents/5
